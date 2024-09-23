@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "nb2fasthtml"
+  site-url: "https://AnswerDotAI.github.io/nb2fasthtml"
+  description: "Conver notebooks to fasthtml"
+  repo-branch: main
+  repo-url: "https://github.com/AnswerDotAI/nb2fasthtml"
