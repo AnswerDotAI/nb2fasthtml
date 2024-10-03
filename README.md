@@ -58,10 +58,26 @@ can find package manager specific guidelines on
 
 ## How to use
 
-Fill me in please! Don’t forget code examples:
+Call a Jupyter notebook with the `nb2classic.core.render_nb` function. It will convert the notebook into FT Components. You will need to have the `MarkdownJS()` and `HighlightJS()` set in the FastHTML hdrs.
+
+Here's an example that uses `demo.ipynb`, which is in the root of this project.
 
 ``` python
-1+1
+from nb2fasthtml.core import *
+from fasthtml.common import *
+
+hdrs = [
+    MarkdownJS(),
+    HighlightJS(langs=['python', 'javascript', 'html', 'css',]),    
+]
+
+app, rt = fast_app(hdrs=hdrs)
+
+@rt
+def index():
+    return render_nb('demo.ipynb')
+
+serve()
 ```
 
-    2
+The `render_nb()` function can be configured to work with other layout libraries such as fh-frankenui.
