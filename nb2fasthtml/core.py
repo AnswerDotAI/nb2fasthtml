@@ -7,7 +7,6 @@ __all__ = ['strip_list', 'render_md', 'render_md_cell', 'get_nb_lang', 'render_c
 
 # %% ../nbs/00_core.ipynb 4
 from fasthtml.common import *
-from fasthtml.components import Zero_md
 from pathlib import Path
 import json
 
@@ -20,7 +19,8 @@ def strip_list(l, val='\n'):
 
 # %% ../nbs/00_core.ipynb 7
 def render_md(c):
-    return Zero_md(Script(c, type="text/markdown"))
+    # TODO default to FastHTML's implementation
+    return c
 
 # %% ../nbs/00_core.ipynb 8
 def render_md_cell(cell):
@@ -54,8 +54,8 @@ def render_code_output(cell,lang='python'):
 
 # %% ../nbs/00_core.ipynb 16
 def render_nb(fpath, # Path to Jupyter Notebook
-              wrapper=Div, #Wraps entire rendered NB
-              cls='', # cls to be passed to wrapper
+              wrapper=Main, #Wraps entire rendered NB, default is for pico
+              cls='container', # cls to be passed to wrapper, default is for pico
               md_cell_wrapper=Div, # Wraps markdown cell
               md_fn=render_md_cell, # md cell -> rendered html
               code_cell_wrapper=Card, # Wraps Source Code (body) + Outputs (footer)

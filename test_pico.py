@@ -3,7 +3,7 @@ from fasthtml.common import *
 
 hdrs = (Script(type="module", src="https://cdn.jsdelivr.net/npm/zero-md@3?register"),)
 
-app = FastHTML(hdrs=hdrs)
+app, rt = fast_app()
 
 nbs_dir = Path('example_nbs/')
 
@@ -22,7 +22,7 @@ def index_route():
             relative_path = file_path.relative_to(nbs_dir)
             route = f'/{relative_path.with_suffix("")}'
             links.append(Li(A(str(relative_path), href=route)))
-    return Div(Ul(*links))
+    return Main(Ul(*links))
 
 app.add_route('/', index_route)
 
