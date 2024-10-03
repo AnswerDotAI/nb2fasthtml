@@ -12,9 +12,13 @@ app = FastHTML(hdrs=hdrs)
 
 nbs_dir = Path('example_nbs/')
 
+
+def CodeCard(s,o):
+    return Card(s, footer=o, cls='mx-20')
+
 def create_route(file_path):
     def route_handler():
-        nb = render_nb(file_path)
+        nb = render_nb(file_path, code_cell_wrapper=CodeCard, cls='mx-20 space-y-6')
         return nb
     return route_handler
 

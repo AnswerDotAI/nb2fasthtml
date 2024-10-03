@@ -45,20 +45,32 @@ def render_code_output(cell,lang='python'):
     for output in cell['outputs']:
         if output['output_type'] == 'execute_result':
             data = output['data']
-            if 'text/markdown' in data.keys(): res.append(NotStr(''.join(strip_list(data['text/markdown'][1:-1]))))
-            elif 'text/plain' in data.keys(): res.append(''.join(strip_list(data['text/plain'])))
+            if 'text/markdown' in data.keys(): 
+                res.append(NotStr(''.join(strip_list(data['text/markdown'][1:-1]))))
+            elif 'text/plain' in data.keys(): 
+                res.append(''.join(strip_list(data['text/plain'])))
         if output['output_type'] == 'stream':
             res.append(''.join(strip_list(output['text'])))
     return Div(cls='code-output')(*res)
 
-# %% ../nbs/00_core.ipynb 16
-def render_nb(fpath):
+# %% ../nbs/00_core.ipynb 17
+def render_nb(fpath, # Path to Jupyter Notebook
+              wrapper=Div, #Wraps entire rendered NB
+              cls='', # cls to be passed to wrapper
+              md_cell_wrapper=Div, # Wraps markdown cell
+              md_fn=render_md_cell, # md cell -> rendered html
+              code_cell_wrapper=Card, # Wraps Source Code (body) + Outputs (footer)
+              cd_fn=render_code_source, # code cell -> code source rendered html
+              out_fn=render_code_output, # code cell -> code output rendered html
+              **kwargs # Passed to wrapper
+             ): 
     with open(fpath, 'r') as f: xt_nb = json.load(f)
     fname = Path(fpath).name
     res = []
     for cell in xt_nb['cells']:
         if cell['cell_type']=='code':
-            s,o = render_code_source(cell), render_code_output(cell)
-            res.append(Card(s,footer=o,cls='mx-20'))
-        elif cell['cell_type']=='markdown': res.append(Div(render_md_cell(cell)))
-    return Div(cls='mx-20 space-y-6')(*res)
+            s,o = cd_fn(cell), out_fn(cell)
+            res.append(code_cell_wrapper(s,o))
+        elif cell['cell_type']=='markdown': 
+            res.append(md_cell_wrapper(md_fn(cell)))
+    return wrapper(cls=cls)(*res)
