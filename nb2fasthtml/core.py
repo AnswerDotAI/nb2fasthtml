@@ -10,7 +10,6 @@ from fasthtml.common import *
 from fasthtml.components import Zero_md
 from pathlib import Path
 import json
-from fh_frankenui.components import *
 
 # %% ../nbs/00_core.ipynb 6
 def strip_list(l, val='\n'):
@@ -51,9 +50,9 @@ def render_code_output(cell,lang='python'):
                 res.append(''.join(strip_list(data['text/plain'])))
         if output['output_type'] == 'stream':
             res.append(''.join(strip_list(output['text'])))
-    return Div(cls='code-output')(*res)
+    return Footer(cls='code-output')(*res)
 
-# %% ../nbs/00_core.ipynb 17
+# %% ../nbs/00_core.ipynb 16
 def render_nb(fpath, # Path to Jupyter Notebook
               wrapper=Div, #Wraps entire rendered NB
               cls='', # cls to be passed to wrapper
