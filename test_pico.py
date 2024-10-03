@@ -1,9 +1,12 @@
 from nb2fasthtml.core import *
 from fasthtml.common import *
 
-hdrs = (Script(type="module", src="https://cdn.jsdelivr.net/npm/zero-md@3?register"),)
+hdrs = [
+    MarkdownJS(),
+    HighlightJS(langs=['python', 'javascript', 'html', 'css',]),    
+]
 
-app, rt = fast_app()
+app, rt = fast_app(hdrs=hdrs)
 
 nbs_dir = Path('example_nbs/')
 
