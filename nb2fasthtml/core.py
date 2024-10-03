@@ -25,7 +25,7 @@ def render_md(c):
 # %% ../nbs/00_core.ipynb 8
 def render_md_cell(cell):
     assert cell['cell_type'] == 'markdown'
-    return Div(cls='md-cell')(render_md(''.join(strip_list(cell['source']))))
+    return Div(cls='marked')(render_md(''.join(strip_list(cell['source']))))
 
 # %% ../nbs/00_core.ipynb 10
 def get_nb_lang(nb): return nb['metadata']['kernelspec']['language']
@@ -35,7 +35,7 @@ def get_nb_lang(nb): return nb['metadata']['kernelspec']['language']
 def render_code_source(cell,lang='python'):
     if cell['source']==[]: return ''
     code = f'''```{lang}\n{''.join(strip_list(cell['source']))}'''
-    return Div(cls='code-source')(render_md(code))
+    return Div(cls='marked')(render_md(code))
 
 # %% ../nbs/00_core.ipynb 13
 def render_code_output(cell,lang='python'):
@@ -50,7 +50,7 @@ def render_code_output(cell,lang='python'):
                 res.append(''.join(strip_list(data['text/plain'])))
         if output['output_type'] == 'stream':
             res.append(''.join(strip_list(output['text'])))
-    return Footer(cls='code-output')(*res)
+    return Footer(cls='marked')(*res)
 
 # %% ../nbs/00_core.ipynb 16
 def render_nb(fpath, # Path to Jupyter Notebook
