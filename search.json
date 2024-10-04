@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nb2fasthtml",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation.",
+    "crumbs": [
+      "nb2fasthtml"
+    ]
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "nb2fasthtml",
+    "section": "Developer Guide",
+    "text": "Developer Guide\nIf you are new to using nbdev here are some useful pointers to get you started.\n\nInstall nb2fasthtml in Development mode\n# make sure nb2fasthtml package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to nb2fasthtml\n$ nbdev_prepare",
+    "crumbs": [
+      "nb2fasthtml"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "nb2fasthtml",
+    "section": "Usage",
+    "text": "Usage\n\nInstallation\nInstall latest from the GitHub repository:\n$ pip install git+https://github.com/AnswerDotAI/nb2fasthtml.git\nor from conda\n$ conda install -c AnswerDotAI nb2fasthtml\nor from pypi\n$ pip install nb2fasthtml\n\n\nDocumentation\nDocumentation can be found hosted on this GitHub repository’s pages. Additionally you can find package manager specific guidelines on conda and pypi respectively.",
+    "crumbs": [
+      "nb2fasthtml"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "nb2fasthtml",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2",
+    "crumbs": [
+      "nb2fasthtml"
+    ]
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "nb",
+    "section": "",
+    "text": "&lt;script type=\"module\" src=\"https://cdn.jsdelivr.net/npm/zero-md@3?register\"&gt;&lt;/script&gt;\nexample_nb_dir = Path('../example_nbs/')\nwith open(example_nb_dir/'explaining_xt_components.ipynb', 'r') as f: xt_nb = json.load(f)\nsource",
+    "crumbs": [
+      "nb"
+    ]
+  },
+  {
+    "objectID": "core.html#todo",
+    "href": "core.html#todo",
+    "title": "nb",
+    "section": "Todo",
+    "text": "Todo\n\nQuarto stuff rendered?\nImplement default for Markdown based on FastHTML’s default",
+    "crumbs": [
+      "nb"
+    ]
+  },
+  {
+    "objectID": "app.html",
+    "href": "app.html",
+    "title": "app",
+    "section": "",
+    "text": "from nb2fasthtml.core import *",
+    "crumbs": [
+      "app"
+    ]
+  }
+]
