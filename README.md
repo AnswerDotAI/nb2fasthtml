@@ -35,7 +35,7 @@ Install latest from the GitHub
 $ pip install git+https://github.com/AnswerDotAI/nb2fasthtml.git
 ```
 
-or from [conda](https://anaconda.org/AnswerDotAI/nb2fasthtml)
+<!-- or from [conda](https://anaconda.org/AnswerDotAI/nb2fasthtml)
 
 ``` sh
 $ conda install -c AnswerDotAI nb2fasthtml
@@ -45,7 +45,7 @@ or from [pypi](https://pypi.org/project/nb2fasthtml/)
 
 ``` sh
 $ pip install nb2fasthtml
-```
+``` -->
 
 ### Documentation
 
