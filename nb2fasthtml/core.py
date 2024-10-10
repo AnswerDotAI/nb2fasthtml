@@ -94,7 +94,7 @@ def get_frontmatter(source,     # metatadata source (jupyter cell or md content)
                    ):
     if not nb_file: return _fm2dict(source)
     if md_fm:       return _md2dict(source.source)
-    return _fm2dict(source.source, nb)    
+    return _fm2dict(source.source, nb_file)    
 
 get_frontmatter_raw = partial(get_frontmatter, md_fm=False)
 get_frontmatter_md =  partial(get_frontmatter, md_fm=True)
