@@ -38,7 +38,7 @@ def get_nb_lang(nb): return nb['metadata']['kernelspec']['language']
 # %% ../nbs/00_core.ipynb
 def render_code_source(cell,lang='python',render_md=render_md):
     if cell['source']==[]: return ''
-    code = f'''```{lang}\n{''.join(strip_list(cell['source']))}```'''
+    code = f'''```{lang}\n{''.join(strip_list(cell['source']))}'''
     return render_md(code)
 
 # %% ../nbs/00_core.ipynb
