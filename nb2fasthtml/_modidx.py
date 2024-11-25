@@ -13,6 +13,5 @@ d = { 'settings': { 'branch': 'main',
                                   'nb2fasthtml.core.render_code_source': ('core.html#render_code_source', 'nb2fasthtml/core.py'),
                                   'nb2fasthtml.core.render_frontmatter': ('core.html#render_frontmatter', 'nb2fasthtml/core.py'),
                                   'nb2fasthtml.core.render_md': ('core.html#render_md', 'nb2fasthtml/core.py'),
-                                  'nb2fasthtml.core.render_md_cell': ('core.html#render_md_cell', 'nb2fasthtml/core.py'),
                                   'nb2fasthtml.core.render_nb': ('core.html#render_nb', 'nb2fasthtml/core.py'),
                                   'nb2fasthtml.core.strip_list': ('core.html#strip_list', 'nb2fasthtml/core.py')}}}
